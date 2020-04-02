@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $db = new PDO('mysql:host=localhost;dbname=dourasoft8', 'root', '');
+    $db = new PDO('mysql:host=localhost;dbname=dourasoft9', 'root', '');
 
     // Excluir ForeignKey 
 
@@ -11,7 +11,7 @@ try {
     	WHERE REFERENCED_TABLE_NAME IS NOT NULL"
     );
 
-	if(count($dropForeignKey->fetch()) > 0){
+	if(!empty($dropForeignKey->fetch())){
 		echo "<h1>Excluido Foreign Keys</h1>";
 
 		while ($drop = $dropForeignKey->fetch()) {
@@ -24,8 +24,6 @@ try {
 	    	}
     	}
 	}  
-
-	exit;  	
 
 	// Drop tables
 
@@ -251,6 +249,32 @@ try {
 		"DROP TABLE plano_produtos",
 		"DROP TABLE planos_grupos",
 		"DROP TABLE contatos",
+		"DROP TABLE bpocontabil_exportacao_itens",
+		"DROP table bpocontabil_exportacao",
+		"DROP table avaliacoes_pedidos",
+		"DROP table auditoria_indice",
+		"DROP table auditoria",
+		"DROP table atualizacao_monetaria",
+		"DROP table areas_complemento_tokens",
+		"DROP table app_autoinstalar",
+		"DROP table app",
+		"DROP table administradora_cartoes",
+		"DROP table acordo_item",
+		"DROP table administradora",
+		"DROP table acordo",
+		"DROP table acessos",
+		"DROP table acesso",
+		"DROP table caixa_fechamentos",
+		"DROP table caixa_transacao",
+		"DROP table caixa_usuarios",
+		"DROP table tipo_resultado_atendimento",
+		"DROP table canais_token",
+		"DROP table caixa_transacao",
+		"DROP table caixa_usuarios",
+		"DROP table produtos_sequence",
+		"DROP table produtos_tags",
+		"DROP table produto_cc",
+		"DROP table assinaturas_fidelizacoes",
 	"ALTER TABLE contabanco_mov
 		DROP COLUMN FL_DESCONSIDERARCONTABILIDADE_MOV,
 		DROP COLUMN FL_RECORRENTE_MOV,
