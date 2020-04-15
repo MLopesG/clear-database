@@ -1,14 +1,25 @@
 <!-- Código para uso interno -->
-<!-- Limpeza de banco de dados, para possibilitar a migração há outro SGBD -->
+<!-- Limpeza de banco de dados, para possibilidar a migração há outro SGBD -->
 
 <style type="text/css">
 
 	*{
-		font-family: 'Times New Roman', Georgia, Serif;
+		font-family: 'Roboto Mono', monospace;
+		background: black;
+	}
+
+	html{
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	b{
+		color: #fff;
+		line-height: 1.5rem;
 	}
 
 	.true{
-		color: green;
+		color: #00B200;
 	}
 
 	.false{
@@ -16,7 +27,8 @@
 	}
 
 	h1{
-		font-size: 1.3rem;
+		font-size: 1.4rem;
+		color: white;
 	}
 
 </style>
@@ -27,7 +39,7 @@
 // Conexão com banco de dados MYSQL
 
 	$localhost = 'localhost';
-	$dbname = 'dourasoft1';
+	$dbname = 'dourasoft2';
 	$user = 'root';
 	$password = '';
 
@@ -263,7 +275,6 @@ try {
 		"DROP TABLE contabanco_mov_cc",
 		"DROP TABLE etiquetas",
 		"DROP TABLE empresa_conf",
-		"DROP TABLE contabanco_mov_apropriacao",
 		"DROP TABLE fila_sms",
 		"DROP TABLE fila_impressoes",
 		"DROP TABLE feriados",
@@ -310,10 +321,8 @@ try {
 		"DROP table assinaturas_fidelizacoes",
 		"DROP table arquivos",
 		"DROP table cheque",
-		"DROP table compo_recebimento",
 		"DROP table sacado_grupo",
 		"DROP table grupo_cliente",
-		"DROP table sacado_contatos",
 		"DROP table status_cliente",
 		"DROP TABLE favorecidos_tags2",
 		"DROP TABLE fornecedor_contatos",
@@ -565,9 +574,6 @@ try {
 	  DROP FL_OUT_MENS,
 	  DROP FL_NOV_MENS,
 	  DROP FL_DEZ_MENS,
-	  DROP FL_PERIODICIDADE_MENS,
-	  DROP DT_INICIO_MENS,
-	  DROP DT_FIM_MENS,
 	  DROP ST_COMPLEMENTO_MENS,
 	  DROP ID_TABELA_RTA,
 	  DROP NM_DIAVENCIMENTO_MENS,
@@ -738,7 +744,6 @@ try {
 	  DROP NM_VISTO_RECB,
 	  DROP ST_NUMEROAUTORIZACAO_RECB,
 	  DROP ID_LOTE_RECB,
-	  DROP ID_CONTRATO_MENS,
 	  DROP ID_FILIAL_FIL,
 	  DROP ST_LABEL3_RECB,
 	  DROP FL_PRIMEIRANOTIFICACAOSMS_RECB,
@@ -824,3 +829,4 @@ try {
     print "Error: " . $e->getMessage() . "<br/>";
     die();
 }
+
